@@ -1,10 +1,12 @@
 import React from "react";
+import QuestionItem from "./QuestionItem";
+function QuestionList({questions, handleRerender}) {
 
-function QuestionList() {
+  let quiArr = questions.map((quiz,index)=><QuestionItem handleRerender={handleRerender} key={index} question={quiz}/>)
   return (
     <section>
       <h1>Quiz Questions</h1>
-      <ul>{/* display QuestionItem components here after fetching */}</ul>
+      <ul>{quiArr}</ul>
     </section>
   );
 }
